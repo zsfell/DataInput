@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Input Form</title>
+</head>
+<body>
+    <h1>Data Input Form</h1>
+    <form id="dataForm" action="/submit" method="post" onsubmit="return validateForm()">
+        <label for="data1">Data 1:</label>
+        <input type="text" id="data1" name="data1"><br>
+
+        <label for="data2">Data 2:</label>
+        <input type="text" id="data2" name="data2"><br>
+
+        <label for="data3">Data 3:</label>
+        <input type="text" id="data3" name="data3"><br>
+
+        <label for="data4">Data 4:</label>
+        <input type="text" id="data4" name="data4"><br>
+
+        <label for="data5">Data 5:</label>
+        <input type="text" id="data5" name="data5"><br>
+
+        <label for="data6">Data 6:</label>
+        <input type="text" id="data6" name="data6"><br>
+
+        <label for="data7">Data 7:</label>
+        <input type="text" id="data7" name="data7"><br>
+
+        <label for="data8">Data 8:</label>
+        <input type="text" id="data8" name="data8"><br>
+
+        <label for="data9">Data 9:</label>
+        <input type="text" id="data9" name="data9"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            const form = document.getElementById('dataForm');
+            let isValid = false;
+
+            for (let i = 0; i < form.elements.length; i++) {
+                const input = form.elements[i];
+                if (input.type === 'text' && input.value.trim() !== '') {
+                    isValid = true;
+                    break;
+                }
+            }
+
+            if (!isValid) {
+                alert('Please fill at least one field before submitting.');
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
